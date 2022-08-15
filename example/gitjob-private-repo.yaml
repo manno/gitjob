@@ -5,7 +5,7 @@ metadata:
 spec:
   git:
     branch: master
-    repo: git@github.com:StrongMonkey/priv-repo.git
+    repo: git@github.com:fleetrepoci/gitjob-private.git
     clientSecretName: ssh-key-secret
   jobSpec:
     template:
@@ -13,7 +13,7 @@ spec:
         serviceAccountName: kubectl-apply
         restartPolicy: "Never"
         containers:
-          - image: "bitnami/kubectl:latest"
+          - image: "rancher/kubectl:v1.23.3"
             name: kubectl-apply
             command:
               - kubectl
